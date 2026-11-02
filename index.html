@@ -1040,7 +1040,6 @@
   <div class="chapter-heading">A Letter, Just For You</div>
   <div class="chapter-sub" style="margin-bottom:14px;">and something I wanted you to hear</div>
   <div class="divider">✦</div>
-  <button class="voice-btn" id="voiceBtn">▶ Play Voice Message</button>
   <div class="letter-paper" id="letterPaper"></div>
   <div class="scene-continue" data-next="choice">Continue <span class="arrow">↓</span></div>
 </div>
@@ -1314,10 +1313,6 @@ voiceBtn.addEventListener('click', () => {
     voicePlaying = false;
     voiceBtn.textContent = '▶ Play Voice Message';
   }
-});
-voiceAudio.addEventListener('ended', () => {
-  voicePlaying = false;
-  voiceBtn.textContent = '▶ Play Voice Message';
 });
 
 /* ============================================================
