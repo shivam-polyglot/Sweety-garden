@@ -1027,6 +1027,7 @@
   <div class="chapter-heading">Our Memories</div>
   <div class="chapter-sub" style="margin-bottom:14px;">Kept forever</div>
   <div class="divider">✦</div>
+  <button class="voice-btn" id="voiceBtn">▶ Play Voice Message</button>
   <div class="gallery-grid" id="galleryGrid"></div>
   <div class="gallery-hint">tap a photo to see it a little bigger ♡</div>
   <div class="scene-continue" data-next="letter">Continue <span class="arrow">↓</span></div>
@@ -1292,7 +1293,27 @@ function tryPlayMusic() {
     musicOn = false;
   });
 }
-
+/* ============================================================
+   VOICE MESSAGE
+============================================================ */
+const voiceAudio = document.getElementById('voiceAudio');
+const voiceBtn = document.getElementById('voiceBtn');
+let voicePlaying = false;
+voiceBtn.addEventListener('click', () => {
+  if (!voicePlaying) {
+    voiceAudio.play().then(() => {
+      voicePlaying = true;
+      voiceBtn.textContent = '⏸ Playing Voice Message...';
+    }).catch(() => {
+      voiceBtn.textContent = '🎙 Add voice.mp3 to enable';
+      setTimeout(() => voiceBtn.textContent = '▶ Play Voice Message', 2500);
+    });
+  } else {
+    voiceAudio.pause();
+    voicePlaying = false;
+    voiceBtn.textContent = '▶ Play Voice Message';
+  }
+});
 /* ============================================================
    4. PHOTO GALLERY BUILDER
 ============================================================ */
