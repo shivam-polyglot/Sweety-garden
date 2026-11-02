@@ -1023,22 +1023,9 @@
   <div class="divider">✦</div>
   <div class="gallery-grid" id="galleryGrid"></div>
   <div class="gallery-hint">tap a photo to see it a little bigger ♡</div>
-  <div class="scene-continue" data-next="timeline">Continue <span class="arrow">↓</span></div>
-</div>
-
-<!-- ============================================================
-     5. TIMELINE
-============================================================ -->
-<div class="scene scrollable sparkle-bg" id="scene-timeline">
-  <div class="timeline-wrap">
-    <div class="section-eyebrow">📖 Our Timeline</div>
-    <div class="chapter-heading">Our Story</div>
-    <div class="chapter-sub" style="margin-bottom:14px;">A timeline of us</div>
-    <div class="divider">✦</div>
-    <div class="timeline-track" id="timelineTrack"></div>
-  </div>
   <div class="scene-continue" data-next="letter">Continue <span class="arrow">↓</span></div>
 </div>
+
 
 <!-- ============================================================
      9 & 10. VOICE MESSAGE + LOVE LETTER
@@ -1141,7 +1128,7 @@ const ENDING_MESSAGE = "If you ever miss me,\nthis garden will always wait for y
 /* ============================================================
    SCENE MANAGEMENT
 ============================================================ */
-const SCENES = ['intro', 'garden', 'gallery', 'things', 'timeline', 'letter', 'choice', 'ending-remember', 'ending-leave'];
+const SCENES = ['intro', 'garden', 'gallery', 'letter', 'choice', 'ending-remember', 'ending-leave'];
 let currentScene = null;
 
 function goToScene(name) {
@@ -1152,7 +1139,7 @@ function goToScene(name) {
   currentScene = name;
 
   const nav = document.getElementById('sceneNav');
-  const navScenes = ['garden', 'gallery', 'things', 'timeline', 'letter', 'choice'];
+  const navScenes = ['garden', 'gallery', 'letter', 'choice'];
   if (navScenes.includes(name)) {
     nav.classList.add('visible');
     nav.querySelectorAll('.dot').forEach(d => d.classList.toggle('active', d.dataset.scene === name));
@@ -1171,7 +1158,6 @@ function goToScene(name) {
   }
   if (name === 'gallery') buildGallery();
   if (name === 'things') buildThings();
-  if (name === 'timeline') buildTimeline();
   if (name === 'letter') buildLetter();
   if (name === 'ending-remember') playRememberEnding();
   if (name === 'ending-leave') playLeaveEnding();
