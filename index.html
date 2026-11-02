@@ -947,16 +947,6 @@
   </div>
 </div>
 
-<!-- Long-press secret mode ring indicator -->
-<div id="longPressRing"></div>
-<div id="secretHint">psst… try holding down anywhere for a while</div>
-
-<!-- Hidden secret message overlay -->
-<div id="secretOverlay">
-  <p id="secretMessage">You found the secret page. 🤫<br>Madam jee call karlo mujhe yaad aa rahi hai!!.</p>
-  <div id="secretClose">close</div>
-</div>
-
 <!-- Photo lightbox (opened by tapping a polaroid in Our Memories) -->
 <div id="lightbox">
   <div id="lightboxBackdrop"></div>
@@ -1460,33 +1450,8 @@ function buildLetter() {
   });
 }
 
-/* ============================================================
-   12. SECRET MODE — long press anywhere for 5 seconds
-============================================================ */
-const secretOverlay = document.getElementById('secretOverlay');
-const longPressRing = document.getElementById('longPressRing');
-let pressTimer = null;
-function startPress(x, y) {
-  if (!lockScreen.classList.contains('hidden')) return; // disabled until unlocked
-  longPressRing.style.left = x + 'px';
-  longPressRing.style.top = y + 'px';
-  longPressRing.classList.remove('charging');
-  void longPressRing.offsetWidth;
-  longPressRing.classList.add('charging');
-  pressTimer = setTimeout(() => {
-    secretOverlay.classList.add('show');
-  }, 5000);
-}
-function cancelPress() {
-  clearTimeout(pressTimer);
-  longPressRing.classList.remove('charging');
-}
-window.addEventListener('pointerdown', e => startPress(e.clientX, e.clientY));
-window.addEventListener('pointerup', cancelPress);
-window.addEventListener('pointermove', () => {});
-document.getElementById('secretClose').addEventListener('click', () => secretOverlay.classList.remove('show'));
 
-/* ============================================================
+/* =================================================s===========
    13. FINAL CHOICE
 ============================================================ */
 document.getElementById('btnRemember').addEventListener('click', () => goToScene('ending-remember'));
