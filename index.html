@@ -1090,28 +1090,6 @@ const GALLERY_PHOTOS = [
   { src: '5.jpg', caption: 'Us', emoji: '💞', grad: 'linear-gradient(135deg,#4a0f25,#9a2a4a)' }
 ];
 
-const THINGS_I_LOVE = [
-  { emoji: '😊', title: 'Your laugh', text: 'The way you laugh at your own jokes before you even finish them.' },
-  { emoji: '📱', title: 'Good mornings', text: 'How you text me good morning even on your busiest days.' },
-  { emoji: '🥺', title: 'The shy side', text: 'The way you get shy but still try to show you care.' },
-  { emoji: '🎧', title: 'Songs for us', text: 'How you send me songs that remind you of us.' },
-  { emoji: '💬', title: 'You remember', text: 'The way you remember tiny things I mention in passing.' },
-  { emoji: '🌙', title: 'Late nights', text: 'How you stay up talking to me even when you\'re sleepy.' },
-  { emoji: '🍽️', title: 'Have you eaten?', text: 'The way you always ask if I\'ve eaten yet.' },
-  { emoji: '🫶', title: 'Saying sorry first', text: 'How you say sorry first, even when it wasn\'t your fault.' },
-  { emoji: '💖', title: 'Simply, you', text: 'The way you love me — quietly, but so completely.' }
-];
-
-// These are separate from GALLERY_PHOTOS above — Our Story gets its own set
-// of pictures rather than reusing the ones from Our Memories. Point "img" at
-// whichever files you'd like to use here (they can be totally different photos).
-const TIMELINE_EVENTS = [
-  { when: 'Month One', title: '1st Month', text: 'The day our paths crossed, and everything quietly changed.', img: '6.jpg', emoji: '🌱', grad: 'linear-gradient(135deg,#1a3a25,#2a5a3f)' },
-  { when: 'Month Two', title: '2nd Month', text: 'Learning your rhythm, finding home in the quiet hours.', img: '7.jpg', emoji: '🌤️', grad: 'linear-gradient(135deg,#1a2a4a,#2a4a7a)' },
-  { when: 'Month Three', title: '3rd Month', text: 'Ninety days in, and every ordinary moment still feels special.', img: '8.jpg', emoji: '🌸', grad: 'linear-gradient(135deg,#4a1a35,#7a2a5f)' },
-  { when: 'Through the Miles', title: 'Distance', text: 'The miles that tried to change us, but only brought us closer.', img: '9.jpg', emoji: '🕊️', grad: 'linear-gradient(135deg,#1a1a35,#3a2a55)' },
-  { when: 'Right Now', title: 'Today', text: 'Three months down, still choosing you, still growing this garden.', img: '10.jpg', emoji: '💞', grad: 'linear-gradient(135deg,#4a0f25,#9a2a4a)' }
-];
 
 const LETTER_LINES = [
   "My dearest love,",
@@ -1123,7 +1101,7 @@ const LETTER_LINES = [
   "— Always yours."
 ];
 
-const ENDING_MESSAGE = "If you ever miss me,\nthis garden will always wait for you.";
+const ENDING_MESSAGE = "Okay, madam ji!! Tumhara hi pati hoon, why are you being so harsh?!!";
 
 /* ============================================================
    SCENE MANAGEMENT
@@ -1519,7 +1497,7 @@ document.getElementById('btnLeave').addEventListener('click', () => goToScene('e
 function playRememberEnding() {
   const el = document.getElementById('rememberTypewriter');
   el.innerHTML = '';
-  const msg = `Every flower in this garden still remembers you.<br><br>And so do I. 🌸`;
+  const msg = `I will ask later madam jee!!<br><br>I love you my Sweety!! 🌸`;
   let i = 0;
   const typer = setInterval(() => {
     el.innerHTML = msg.slice(0, i);
